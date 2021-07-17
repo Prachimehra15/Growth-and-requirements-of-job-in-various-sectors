@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+  <title>Big Data</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+
+  }
+  h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color:black;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: black;
+    font-weight: 400;
+    margin-bottom: 0px;
+  }  
+  .jumbotron {
+     background-image: url(big.jpg);
+     background-position: right;
+    background-repeat: no-repeat;
+    text-align: left;
+    color: yellow;
+    padding: 100px 25px;
+    font-family: Montserrat, sans-serif;
+    background-color:#132639;
+  }
+  .container-fluid {
+    padding: 60px 50px;
+  }
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+  .logo-small {
+    color: #f4511e;
+    font-size: 50px;
+  }
+  .logo {
+    color: #f4511e;
+    font-size: 200px;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #f4511e;
+  }
+  .carousel-indicators li {
+    border-color: #f4511e;
+  }
+  .carousel-indicators li.active {
+    background-color: #f4511e;
+  }
+  .item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+  }
+  .item span {
+    font-style: normal;
+  }
+  .panel {
+    border: 1px solid #f4511e; 
+    border-radius:0 !important;
+    transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+    border: 1px solid #f4511e;
+    background-color: #fff !important;
+    color: #f4511e;
+  }
+  .panel-heading {
+    color: #fff !important;
+    background-color: #f4511e !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+    background-color: white !important;
+  }
+  .panel-footer h3 {
+    font-size: 32px;
+  }
+  .panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+  }
+  .panel-footer .btn {
+    margin: 15px 0;
+    background-color: #f4511e;
+    color: #fff;
+  }
+  .navbar {
+    margin-bottom: 0;
+    background-color: black;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #f4511e !important;
+    background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+  }
+  footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #f4511e;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+      width: 100%;
+      margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+      font-size: 150px;
+    }
+  }
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#myPage">BIG DATA</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#skills">SKILLS</a></li>
+        <li><a href="#salary">SALARY</a></li>
+        <li><a href="#companies">COMPANIES</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br>
+<div id="main">
+<div class="jumbotron text-center">
+  <h1>Big Data</h1> 
+
+</div>
+</div>
+<!-- Container (About Section) -->
+<div id="about" class="container-fluid text-center">
+  <div class="row">
+      <h2>About</h2>
+      <h4>Big Data Analytics is the examination of varied Big Data or large data sets to find relevant and useful information that allows businesses to make informed choices. This uncovered information can include unknown correlations, patterns, hidden trends, and other data. It can be a complicated process, and it takes a skilled and trained Big Data Analyst to successfully and accurately complete it.</h4>
+      <h4>Big Data analytics centres on uncovering and analysing useful data like hidden trends and patterns so companies can make more informed business decisions and gain a competitive advantage. It’s the job of a Big Data analyst to study the market by identifying, collecting, analysing, visualizing, and communicating this data to help guide these future decisions.</h4>
+      <h4>A Big Data analyst wears multiple hats, frequently switching gears from conducting research to mining data for information to presenting findings. This makes versatility an important skill for anyone interested in this field. Problem-solving skills are also essential for a Big Data analyst, as is the ability to think critically and logically while also using creative reasoning skills. A successful Big Data analyst should also have programming knowledge, quantitative and data interpretation skills, strong oral and written communication skills, and experience with multiple technologies. Big Data Mining and Auditing  skills are also a must.</h4>
+  </div>
+</div>
+
+
+
+
+
+
+<<!-- Container (skills Section) -->
+<div id="skills" class="container-fluid text-left bg-grey">
+  <h2>SKILLS</h2>
+  <h4>It is a very relevant question that what are the other relevant skills to grow as a big data professional. One not only needs technical but also various business skills for venturing into big data career. These skills might include:</h4>
+    <ul>
+      <li><h4>Proficiency in Python/R plus SQL</h4></li>
+      <li><h4>Proficiency in MS Excel, MS Powerpoint </h4></li>
+      <li><h4>Quantitative skills</h4></li>
+      <li><h4>Familiarity with latest technologies</h4></li>
+      <li><h4>Data visualisation and analytical skills</h4></li>
+      <li><h4>Understanding of business and outcomes</h4></li>
+      <li><h4>Hands on experience on latest technological tools</h4></li>
+    </ul>
+  </h4>
+</div>
+
+<!-- Container (salary Section) -->
+<div id="salary" class="container-fluid text-center">
+  <h2>SALARY</h2>
+  <h4>The average Big data  salary is ₹698,413. An entry-level data scientist can earn around ₹500,000 per annum with less than one year of experience. Early level data scientists with 1 to 4 years experience get around ₹610,811 per annum.</h4>
+  <h4>A mid-level data scientist with 5 to 9 years experience earns ₹1,004,082 per annum in India. As your experience and skills grow, your earnings rise dramatically as senior-level data scientists around more than ₹1,700,000 a year in India!</h4>
+  <img src="bd1.png" >
+  <img src="bd2.png" >
+  <img src="bd3.png" >
+</div>
+
+<!-- Container (Pricing Section) -->
+<div id="companies" class="container-fluid">
+  <div class="text-center">
+    <h2>COMPANIES</h2>
+    <h4>Choose a city that your prefernce</h4>
+  </div>
+  <div class="row slideanim">
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Delhi</h1>
+        </div>
+        <div class="panel-body">
+          <a href="https://www.linkedin.com/jobs/view/2227312778/?eBP=CwEAAAF1vXJInE7MN0ZCjAY3ix-Lf0MkoVZpdUD61yg97AeLKymd3vgNIs1tcBm5D3TzB4yBiFw6kEQ7GNfHHXlzgqLCqs3-4essK93ZZi3y8TUxWCvhnb5NtNmtRJH8chtzpMstA28EaAJIak-i33Y_OvgFuqBkkEeh3p-GWwWD_hKC_FxMbUbMvzoNkI06oWTeRZf8qeTm4ExxKtICOeLNvPkYG1hnlGrHmyuZ64rlHZYBEp5IBhihtTutUFdEtGqYrTIoQ-cIgzdVlSRPfw8ZCC7gyDjeSg9pHAvTFId5cSg9UFqbNt1otAjq0aroa6ezMrCOnmZO1KRM_Cn6aGg0TwJQLMDDmKTdCr3axSWsymMF6FvGVopOTrpmbvhdUHTNdlW3RdNqr-MVRVYiL6QjgQ&recommendedFlavor=ACTIVELY_HIRING_COMPANY&refId=4f76f11d-3d30-48c3-b86d-3b9460105777&trackingId=pVkqjVAixx%2FMHEvUgKgbhA%3D%3D&trk=flagship3_search_srp_jobs"><strong>Iris Software Inc</strong></a>
+          <br>
+          <a href="https://www.linkedin.com/jobs/view/2222611185/?eBP=CwEAAAF1vXJInBDhdFvL1hoFDTIFjKyZcv8IfuNtSmvPeqojt_mO2oGrS7Z74QDLAv50MH057QTE8P1MO2PjHeBpLEXKE4f1bQlZK2cD4warcP-1CAhGvHgfxTAfEmjrz3_Ph67-mBDSprB4bh2grxi-CfFH1aVZJLIDubE20s3Mcpv97o4xNIiZMffyntOFIwl_i2wMt2J5bTbuEiwJgRayE6g0Bwr_GCiVUjizIUblePweLVgt4MIU1FMKxpQrvbgNgZxfP6GCJv5OkHYoPgHvi6uY3U4z6iuPzYKeGCmL1pJd5ZC_5PUiUaCit0Rkxx3ZOU7eXFSsHNKUqJHmbfZ8_-2FCTed6r4a3bkvIuGQYuruVdjzg0Wtom6Ba4QRvdMHKIe92_oK6czm5YanRw4mCA&recommendedFlavor=ACTIVELY_HIRING_COMPANY&refId=4f76f11d-3d30-48c3-b86d-3b9460105777&trackingId=hpkB%2Bz9X61mmke0ksic6bg%3D%3D&trk=flagship3_search_srp_jobs"><strong>PubMatic Inc</strong></a>
+          <br>
+          <a href="https://www.linkedin.com/jobs/view/2151223911/?eBP=CwEAAAF1vXJInC9avEAcCPf8qdya2W8DLiYLsyceVdo_R17nbvJTFOg-FNITzk4u_Ji7wsn5CMX3W7zfBn7D_TIPrf4yyacnCiFRzGtwXVm3E7SuIVxyqY_TnKo-egXkqfznzKvMOvYvUDjrt_ttqfwlyO9Rbfh5z2kC51RtMssQQLFON0TbHViNk1BmkARnaQPOdjY5ln2vFpaV7Qsb3UN3H2fqFMUPulOmZYnfZYVA3zQBrfyUeZDrlFt9xT7N_cjBG2lMBncJEvPkdvJi5mdrQEQhfB8i9vlFH7l32zr5VpItzAGL5abOiZuIvDrkCvZdvXZqScTxMVhLcUI0HVs8udOq9bxgN8wUwJqvcbsS1YviB14lImPj1iXaKubidvkRUd_VblvYFJTKkwajqm5_C9VfQwu6gqOdj6LnqxLp4XcR4U4cKQdSJj4&recommendedFlavor=JOB_SEEKER_QUALIFIED&refId=4f76f11d-3d30-48c3-b86d-3b9460105777&trackingId=hBRN4A3L%2BjcOoeFIOIju2w%3D%3D&trk=flagship3_search_srp_jobs"><strong>Factacy</strong></a>
+          <br>
+          <a href="https://www.linkedin.com/jobs/view/2230551859/?eBP=JOB_SEARCH_ORGANIC&recommendedFlavor=ACTIVELY_HIRING_COMPANY&refId=4f76f11d-3d30-48c3-b86d-3b9460105777&trackingId=SH4pb1gAQNh%2FJgI3WvgNHQ%3D%3D&trk=flagship3_search_srp_jobs"><strong>Macquarie Group</strong></a>
+          <br>
+          <a href="https://www.linkedin.com/jobs/view/2298825029/?eBP=JOB_SEARCH_ORGANIC&recommendedFlavor=JOB_SEEKER_QUALIFIED&refId=4f76f11d-3d30-48c3-b86d-3b9460105777&trackingId=H%2BE3CEVO4Q3HpAS4%2FAtdJg%3D%3D&trk=flagship3_search_srp_jobs"><strong>Orzata Inc</strong></a>
+          <br>
+          <a href="https://www.linkedin.com/jobs/view/2268167951/?eBP=JOB_SEARCH_ORGANIC&refId=4f76f11d-3d30-48c3-b86d-3b9460105777&trackingId=6FZ3Gw7xMlkbOJUp7UpDzQ%3D%3D&trk=flagship3_search_srp_jobs"><strong>Diverse Lynx</strong></a>
+        </div>
+      </div>      
+    </div>   
+
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Bengaluru</h1>
+        </div>
+        <div class="panel-body">
+          <a href="https://www.linkedin.com/jobs/view/1989659011/?eBP=JOB_SEARCH_ORGANIC&recommendedFlavor=ACTIVELY_HIRING_COMPANY&refId=70c2703f-8578-4057-86f6-612dd93635ed&trackingId=OjsJFKEQDegzO2SE4KirXQ%3D%3D&trk=flagship3_search_srp_jobs"><strong>Amazon</strong></a>
+          <br>
+          <a href="https://www.linkedin.com/jobs/view/2303734281/?eBP=JOB_SEARCH_ORGANIC&refId=70c2703f-8578-4057-86f6-612dd93635ed&trackingId=Uvso7o5xpXweXW2kGwhq6w%3D%3D&trk=flagship3_search_srp_jobs"><strong>Accenture</strong></a>
+          <br>
+          <a href="https://www.linkedin.com/jobs/view/2150999807/?eBP=JOB_SEARCH_ORGANIC&recommendedFlavor=ACTIVELY_HIRING_COMPANY&refId=70c2703f-8578-4057-86f6-612dd93635ed&trackingId=wRjIwenzNSCwQfyQg9x%2F6w%3D%3D&trk=flagship3_search_srp_jobs"><strong>Investing Channel</strong></a>
+          <br>
+          <a href="https://www.linkedin.com/jobs/view/2297949038/?eBP=JOB_SEARCH_ORGANIC&recommendedFlavor=ACTIVELY_HIRING_COMPANY&refId=70c2703f-8578-4057-86f6-612dd93635ed&trackingId=3BEix2eHHppYcDsFbpg%2B4Q%3D%3D&trk=flagship3_search_srp_jobs"><strong>CARS24</strong></a>
+          <br>
+          <a href="https://www.linkedin.com/jobs/view/2256455720/?eBP=JOB_SEARCH_ORGANIC&recommendedFlavor=ACTIVELY_HIRING_COMPANY&refId=70c2703f-8578-4057-86f6-612dd93635ed&trackingId=YlPWEo4whLug8mWRoe3YQQ%3D%3D&trk=flagship3_search_srp_jobs"><strong>IBM</strong></a>
+          <br>
+          <a href="https://www.linkedin.com/jobs/view/2260961661/?eBP=JOB_SEARCH_ORGANIC&refId=c346f28c-1ed6-4517-87ed-cf6e3c0e7406&trackingId=jNbS7phf5WKYLXo86HVy2w%3D%3D&trk=flagship3_search_srp_jobs"><strong>Mobileum</strong></a>
+        </div>
+      </div>      
+    </div>       
+    
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Mumbai</h1>
+        </div>
+        <div class="panel-body">
+          <a href="https://www.linkedin.com/company/ibm?trk=public_jobs_topcard_logo"><strong>  IBM</strong></a>
+          <br>
+          <a href="https://in.linkedin.com/jobs/view/big-data-engineer-at-flytxt-2275736359?refId=aa111b4a-18ef-4295-8b17-7e4b76699ce6&trk=public_jobs_topcard_title"><strong> Flytxt</strong></a>
+          <br>
+          <a href="https://in.linkedin.com/jobs/view/big-data-developer-at-mintifi-2292230788?refId=aa111b4a-18ef-4295-8b17-7e4b76699ce6&trk=public_jobs_topcard_title"><strong>Mintifi </strong></a>
+          <br>
+          <a href="https://www.linkedin.com/company/priceline-com?trk=public_jobs_topcard_logo"><strong>Priceline</strong></a>
+          <br>
+         <a href="https://in.linkedin.com/jobs/view/data-engineer-at-bookmyshow-2251730064?refId=bce8e545-cde6-4240-93ef-c41a0a537e98&trk=public_jobs_topcard_title"><strong>Book my Show</strong></a>
+         <br>
+         <a href="https://www.linkedin.com/company/jpmorganchase?trk=public_jobs_topcard_logo"><strong>JPMorgan</strong></a>
+        </div>
+      </div>      
+    </div> 
+  </div>
+</div>
+
+
+<footer class="container-fluid text-center">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+
+</body>
+</html>
