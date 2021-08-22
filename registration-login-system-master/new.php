@@ -1,24 +1,25 @@
 <?php
 session_start();
 //cek apakah user sudah login
-if(!isset($_SESSION['username'])){
-    die("You cannot login");//jika belum login jangan lanjut
+if(!isset($_SESSION['user'])){
+    die("Anda belum login");//jika belum login jangan lanjut
 }
 //cek level user
-if($_SESSION['level']!="Admin"){
-    die("You are admin");//jika bukan admin jangan lanjut
+if($_SESSION['level']!="user"){
+    die("You Not User..!");//jika bukan admin jangan lanjut
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
+  <!-- Theme Made By www.w3schools.com -->
   <title>MINI PROJECT</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <style>
@@ -234,7 +235,7 @@ if($_SESSION['level']!="Admin"){
   {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 25px;
   color: yellow;
   display: block;
   transition: 0.3s;
@@ -291,22 +292,20 @@ if($_SESSION['level']!="Admin"){
         <li><a href="#whom">FOR WHOM</a></li>
         <li><a href="#working">WORKING</a></li>
         <li><a href="#contact">CONTACT</a></li>
-        <li><a href="http://localhost/manage/index.php">ACCOUNT MANAGE</a></li>
+        <li><a href="http://localhost/prachi/crud">ACCOUNT MANAGE</a></li>
         <li><button class="openbtn" onclick="openNav()">☰ Menu</button></li>
-        <li><a href="logout.php">LOGOUT<span class="glyphicon glyphicon-log-out"></span></a></li>
+        <li><button style="font-size:24px">Logout<i class="fa fa-sign-out"></i></button></li>
       </ul>
     </div>
   </div>
 </nav>
 <div id="mySidebar" class="sidebar">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-  <a href="backendweb.html">Backend Developer</a>
+  <a href="backendweb.html">Backend Web Developer</a>
   <a href="bigdata.html">Big Data</a>
   <a href="dataanalyst.html">Data Analyst</a>
-  <a href="databaseadmin.html">Database Admin</a>
+  <a href="databaseadmin.html">Database Administrator</a>
   <a href="machinelearning.html">Machine Learning</a>
-  <a href="fullstack.html">Fullstack Developer</a>
-  <a href="junior.html">Junior Developer</a>
 </div>
 <script>
 function openNav()
@@ -331,10 +330,12 @@ function closeNav()
 <!-- Container (About Section) -->
 <div id="about" class="container-fluid">
   <div class="row">
+    <div class="col-sm-8">
       <h2>About Us</h2>
       <h4>We all know in today’s world finding a job that you genuinely have interest in could be difficult, and not knowing the information about what all qualifications or specializations you need to do before going to the interview. Our company does just that for you.</h4>
       <h4>Time to glow provides customers with the exact information about the jobs that you’ve always wanted to have but had very inadequate sources or irrelevant information regarding it. Our website gives you an extremely filtered set of information regarding anything and everything about your dream job so that you start working towards your goal. We use the power of data and statistics to help you make better choices for your career.</h4>
       <h4>Our company helps the customers with the precise information and a step by step TO-DO for the people who wish have a specific job but don’t know the technicalities or the attributes/eligibility of it. </h4>
+    </div>
   </div>
 </div>
 <!-- Container (Services Section) -->
@@ -359,7 +360,7 @@ function closeNav()
     </ul>
   </h4>
   <h4>Help you in finding your dream company and will be effective in your resume building as it will add on various skills to your field.Help you in clearing your vision regarding your field.</h4>
-  <h2 >We Believe</h2>
+  <h2 >We Belive</h2>
   <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">

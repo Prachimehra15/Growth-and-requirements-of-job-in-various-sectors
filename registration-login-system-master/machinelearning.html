@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <title>Machine Learning</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+
+  }
+  h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color:black;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: black;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }  
+  .jumbotron {
+    background-image: url(ml.jpg);
+    background-position: right;
+    background-repeat: no-repeat;
+    text-align: left;
+    color: yellow;
+    padding: 100px 25px;
+    font-family: Montserrat, sans-serif;
+    background-color:#0d1a26;
+  }
+  .container-fluid {
+    padding: 60px 50px;
+  }
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+  .logo-small {
+    color: #f4511e;
+    font-size: 50px;
+  }
+  .logo {
+    color: #f4511e;
+    font-size: 200px;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #f4511e;
+  }
+  .carousel-indicators li {
+    border-color: #f4511e;
+  }
+  .carousel-indicators li.active {
+    background-color: #f4511e;
+  }
+  .item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+  }
+  .item span {
+    font-style: normal;
+  }
+  .panel {
+    border: 1px solid #f4511e; 
+    border-radius:0 !important;
+    transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+    border: 1px solid #f4511e;
+    background-color: #fff !important;
+    color: #f4511e;
+  }
+  .panel-heading {
+    color: #fff !important;
+    background-color: #f4511e !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+    background-color: white !important;
+  }
+  .panel-footer h3 {
+    font-size: 32px;
+  }
+  .panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+  }
+  .panel-footer .btn {
+    margin: 15px 0;
+    background-color: #f4511e;
+    color: #fff;
+  }
+  .navbar {
+    margin-bottom: 0;
+    background-color: black;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #f4511e !important;
+    background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+  }
+  footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #f4511e;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+      width: 100%;
+      margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+      font-size: 150px;
+    }
+  }
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#myPage">MACHINE LEARNING</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#skills">SKILLS</a></li>
+        <li><a href="#salary">SALARY</a></li>
+        <li><a href="#companies">COMPANIES</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br>
+<div id="main">
+<div class="jumbotron text-center">
+  <h1>Machine Learning</h1> 
+  
+</div>
+</div>
+<!-- Container (About Section) -->
+<div id="about" class="container-fluid text-center">
+  <div class="row">
+      <h2>About</h2><br>
+      <h4>Machine learning is an application of artificial intelligence (AI) that provides systems the ability to automatically learn and improve from experience without being explicitly programmed. Machine learning focuses on the development of computer programs that can access data and use it learn for themselves.</h4>
+      <h4>The process of learning begins with observations or data, such as examples, direct experience, or instruction, in order to look for patterns in data and make better decisions in the future based on the examples that we provide. The primary aim is to allow the computers learn automatically without human intervention or assistance and adjust actions accordingly.</h4>
+      <h4>But, using the classic algorithms of machine learning, text is considered as a sequence of keywords; instead, an approach based on semantic analysis mimics the human ability to understand the meaning of a text.</h4>
+  </div>
+</div>
+
+<!-- Container (skills Section) -->
+<div id="skills" class="container-fluid text-left bg-grey">
+  <h2>SKILLS</h2>
+    <ul>
+      <li><h4>Exceptional mathematical skills, in order to perform computations and work with algorithms.</h4></li>
+      <li><h4>Strong analytical skills.</h4></li>
+      <li><h4>The ability to work with large, complex datasets</h4></li>
+      <li><h4>Detailed knowledge of machine learning evaluation metrics and best practice</h4></li>
+      <li><h4>Strong Python coding skills,Experience of a typed language (such as, C++ and Java)</h4></li>
+      <li><h4>Distributed systems tools (such as, Etcd, zookeeper, consul)</h4></li>
+      <li><h4>Competence with infrastructure as code (Terraform, Cloud formation and similar)</h4></li>
+    </ul>
+  </h4>
+</div>
+<!-- Container (salary Section) -->
+<div id="salary" class="container-fluid text-center">
+  <h2>SALARY</h2>
+  <h4>The demand for Machine Learning is high but companies require individuals to have the correct skill sets. The demand for these engineers are always high. The list is endless. That’s the primary reason machine learning salary in India is quite high. The ever increasing demand. Additionally, the better the experience, the higher is the salary. The average machine learning salary in India, according to Payscale, is approximately Rs.686,281 per year, inclusive of bonuses and profit-sharing
+  </h4>
+  <img src="ml.png" >
+</div>
+
+<!-- Container (Pricing Section) -->
+<div id="companies" class="container-fluid">
+  <div class="text-center">
+    <h2>COMPANIES</h2>
+    <h4>Choose a city that your prefernce</h4>
+  </div>
+  <div class="row slideanim">
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Delhi</h1>
+        </div>
+        <div class="panel-body">
+          <a href="https://www.linkedin.com/jobs/view/2305383563/?eBP=JOB_SEARCH_ORGANIC&refId=49471be5-95b2-40bc-8dd9-2e9c564a24fb&trackingId=xT%2BbQJpTIwp%2FsY9bUT6ftw%3D%3D&trk=flagship3_search_srp_jobs"><strong>Magic FinServ</strong></a>
+          <br>
+          <a href="https://www.linkedin.com/jobs/view/2298818870/?eBP=JOB_SEARCH_ORGANIC&recommendedFlavor=JOB_SEEKER_QUALIFIED&refId=49471be5-95b2-40bc-8dd9-2e9c564a24fb&trackingId=WTjP1Im8VTM6XAHD1k1Now%3D%3D&trk=flagship3_search_srp_jobs"><strong>Insilico</strong></a>
+          <br>
+          <a href="https://www.linkedin.com/jobs/view/2303790545/?eBP=JOB_SEARCH_ORGANIC&recommendedFlavor=JOB_SEEKER_QUALIFIED&refId=49471be5-95b2-40bc-8dd9-2e9c564a24fb&trackingId=CWFzZgTV8Nm8n4gMmGfiow%3D%3D&trk=flagship3_search_srp_jobs"><strong>Econolytics</strong></a>
+          <br>
+          <a href="https://www.linkedin.com/jobs/view/2298524236/?eBP=JOB_SEARCH_ORGANIC&recommendedFlavor=JOB_SEEKER_QUALIFIED&refId=49471be5-95b2-40bc-8dd9-2e9c564a24fb&trackingId=TjqEbYy68%2B8BXFwjSt%2Bk%2Bg%3D%3D&trk=flagship3_search_srp_jobs"><strong>Cogno AI</strong></a>
+          <br>
+          <a href="https://www.linkedin.com/jobs/view/2303233149/?eBP=JOB_SEARCH_ORGANIC&refId=49471be5-95b2-40bc-8dd9-2e9c564a24fb&trackingId=Mjg4B0qM%2BiPQNj02dR1oiA%3D%3D&trk=flagship3_search_srp_jobs"><strong>Paxcom India (P) Ltd</strong></a>
+          <br>
+          <a href="https://www.linkedin.com/jobs/view/2268527067/?eBP=JOB_SEARCH_ORGANIC&refId=49471be5-95b2-40bc-8dd9-2e9c564a24fb&trackingId=Y8IjoldIwKwCzsbarWxKwQ%3D%3D&trk=flagship3_search_srp_jobs"><strong>Quincus</strong></a>
+        </div>
+      </div>      
+    </div>   
+
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Bengaluru</h1>
+        </div>
+        <div class="panel-body">
+          <a href="https://www.linkedin.com/jobs/view/2285294276/?eBP=JOB_SEARCH_ORGANIC&recommendedFlavor=ACTIVELY_HIRING_COMPANY&refId=f50830dd-587c-4306-a6a3-61c5d2f280c7&trackingId=%2FDmhAjtWGInRtEtLsozb5g%3D%3D&trk=flagship3_search_srp_jobs"><strong>Apple</strong></a>
+          <br>
+          <a href="https://www.linkedin.com/company/pixuate-ai/"><strong>Pixuate</strong></a>
+          <br>
+          <a href="https://www.linkedin.com/jobs/view/2264808163/?eBP=JOB_SEARCH_ORGANIC&refId=f50830dd-587c-4306-a6a3-61c5d2f280c7&trackingId=rwtMHDZbQVoN%2FD30Ii%2FZKw%3D%3D&trk=flagship3_search_srp_jobs"><strong>Roposo</strong></a>
+          <br>
+          <a href="https://www.linkedin.com/jobs/view/2286334886/?eBP=JOB_SEARCH_ORGANIC&recommendedFlavor=ACTIVELY_HIRING_COMPANY&refId=f50830dd-587c-4306-a6a3-61c5d2f280c7&trackingId=4jm7f6Mh91hM2bjdZZcP1A%3D%3D&trk=flagship3_search_srp_jobs"><strong>Morgan Stanley</strong></a>
+          <br>
+         <a href="https://www.linkedin.com/jobs/view/2277182314/?eBP=JOB_SEARCH_ORGANIC&recommendedFlavor=ACTIVELY_HIRING_COMPANY&refId=f50830dd-587c-4306-a6a3-61c5d2f280c7&trackingId=RyagLNRwHz8lNHG%2BdbOq3w%3D%3D&trk=flagship3_search_srp_jobs"><strong>Danaher Digital LLC</strong></a>
+         <br>
+         <a href="https://www.linkedin.com/jobs/view/2224799837/?eBP=JOB_SEARCH_ORGANIC&recommendedFlavor=ACTIVELY_HIRING_COMPANY&refId=f50830dd-587c-4306-a6a3-61c5d2f280c7&trackingId=IlxsgXMrBzntti2MFH6CXw%3D%3D&trk=flagship3_search_srp_jobs"><strong>UiPath</strong></a>
+        </div>
+      </div>      
+    </div>       
+    
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Mumbai</h1>
+        </div>
+        <div class="panel-body">
+          <a href="https://www.linkedin.com/jobs/view/2259352775/?eBP=JOB_SEARCH_ORGANIC&recommendedFlavor=JOB_SEEKER_QUALIFIED&refId=1fbd80c4-6efc-48d6-9e83-6af91833e267&trackingId=VKD8hfly%2Bl2tv02BcVG9lA%3D%3D&trk=flagship3_search_srp_jobs"><strong>Pepper</strong></a>
+          <br>
+          <a href="https://www.linkedin.com/jobs/view/2308685917/?eBP=JOB_SEARCH_ORGANIC&recommendedFlavor=ACTIVELY_HIRING_COMPANY&refId=1fbd80c4-6efc-48d6-9e83-6af91833e267&trackingId=RZ93%2B8OyZ%2FZy0f623Qjo9w%3D%3D&trk=flagship3_search_srp_jobs"><strong>IDfy</strong></a>
+          <br>
+          <a href="https://www.linkedin.com/jobs/view/2313136011/?eBP=JOB_SEARCH_ORGANIC&refId=1fbd80c4-6efc-48d6-9e83-6af91833e267&trackingId=baS%2Bg9m9V7tWj85it%2FGNGA%3D%3D&trk=flagship3_search_srp_jobs"><strong>Accenture</strong></a>
+          <br>
+          <a href="https://www.linkedin.com/company/alb-associates/"><strong>Alb Associates</strong></a>
+          <br>
+         <a href="https://www.linkedin.com/company/zycus/"><strong>ZYCUS</strong></a>
+         <br>
+         <a href="https://www.linkedin.com/jobs/view/2218812921/?eBP=JOB_SEARCH_ORGANIC&recommendedFlavor=ACTIVELY_HIRING_COMPANY&refId=1fbd80c4-6efc-48d6-9e83-6af91833e267&trackingId=6SylcM5I1PsHExjG%2FLzpGg%3D%3D&trk=flagship3_search_srp_jobs"><strong>IDFC First Bank</strong></a>
+        </div>
+      </div>      
+    </div> 
+  </div>
+</div>
+
+
+<footer class="container-fluid text-center">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+
+</body>
+</html>

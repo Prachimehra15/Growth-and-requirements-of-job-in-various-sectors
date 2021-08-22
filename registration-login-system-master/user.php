@@ -1,18 +1,19 @@
 <?php
 session_start();
 //cek apakah user sudah login
+
 if(!isset($_SESSION['username'])){
-    die("You cannot login");//jika belum login jangan lanjut
+    die("You are not logged in");//jika belum login jangan lanjut
 }
 //cek level user
-if($_SESSION['level']!="Admin"){
-    die("You are admin");//jika bukan admin jangan lanjut
+if($_SESSION['level']=="Admin"){
+    die("You Not User..!");//jika bukan admin jangan lanjut
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
+  <!-- Theme Made By www.w3schools.com -->
   <title>MINI PROJECT</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -291,7 +292,6 @@ if($_SESSION['level']!="Admin"){
         <li><a href="#whom">FOR WHOM</a></li>
         <li><a href="#working">WORKING</a></li>
         <li><a href="#contact">CONTACT</a></li>
-        <li><a href="http://localhost/manage/index.php">ACCOUNT MANAGE</a></li>
         <li><button class="openbtn" onclick="openNav()">☰ Menu</button></li>
         <li><a href="logout.php">LOGOUT<span class="glyphicon glyphicon-log-out"></span></a></li>
       </ul>

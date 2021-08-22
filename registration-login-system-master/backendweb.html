@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com -->
+  <title>Backend Webdeveloper</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+  }
+  h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color:black;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: black;
+    font-weight: 400;
+    margin-bottom: 0px;
+  }  
+  .jumbotron {
+    background-image: url(bw.jpg);
+    background-position: right;
+    background-repeat: no-repeat;
+    text-align: left;
+    color: yellow;
+    padding: 100px 25px;
+    font-family: Montserrat, sans-serif;
+    background-color:#0099ff;
+  }
+  .container-fluid {
+    padding: 60px 50px;
+  }
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+  .logo-small {
+    color: #f4511e;
+    font-size: 50px;
+  }
+  .logo {
+    color: #f4511e;
+    font-size: 200px;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #f4511e;
+  }
+  .carousel-indicators li {
+    border-color: #f4511e;
+  }
+  .carousel-indicators li.active {
+    background-color: #f4511e;
+  }
+  .item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+  }
+  .item span {
+    font-style: normal;
+  }
+  .panel {
+    border: 1px solid #f4511e; 
+    border-radius:0 !important;
+    transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+    border: 1px solid #f4511e;
+    background-color: #fff !important;
+    color: #f4511e;
+  }
+  .panel-heading {
+    color: #fff !important;
+    background-color: #f4511e !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+    background-color: white !important;
+  }
+  .panel-footer h3 {
+    font-size: 32px;
+  }
+  .panel-footer h4 {
+    color:black;
+    font-size: 14px;
+  }
+  .panel-footer .btn {
+    margin: 15px 0;
+    background-color: #f4511e;
+    color: #fff;
+  }
+  .navbar {
+    margin-bottom: 0;
+    background-color: black;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #f4511e !important;
+    background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+  }
+  footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #f4511e;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+      width: 100%;
+      margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+      font-size: 150px;
+    }
+  }
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#myPage">BACKEND WEB DEVELOPMENT</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#skills">SKILLS</a></li>
+        <li><a href="#salary">SALARY</a></li>
+        <li><a href="#companies">COMPANIES</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br>
+<div id="main">
+<div class="jumbotron text-center">
+
+  <h1>Backend Web Development</h1> 
+  
+</div>
+</div>
+<!-- Container (About Section) -->
+<div id="about" class="container-fluid text-center">
+  <div class="row">
+      <h2>About</h2>
+      <h4>The 'back end' of a website is a combination of technology and programming that powers a website. It consists of three parts that a user never sees: a server, an application, and a database. A back-end developer is someone who builds and maintains the technology needed to power the components which enable the user-facing side of the website to exist. Their back end code adds utility to everything the front-end-developer creates. These developers are responsible for creating, maintaining, testing, and debugging the entire back end. This includes the core application logic, databases, data and application integration, API and other back end processes.</h4>
+      <h4>The back end runs a website—the user doesn’t see it or interact with it, but it is always running in the background, delivering functionality and a desktop-like experience. Back-end developers play a critical role in web development teams, and make sure that data or services requested by the front end system or software are delivered. The back end is the combination of a database and software written in a server-side language, which is run on web servers, cloud-based servers, or a hybrid of both. In order to make the server, application, and database communicate with each other, back-end developers use languages like PHP, Ruby, Python, Java, and .Net to build an application, and tools like MySQL, Oracle, and SQL Server to find, save, or change data and serve it to the user in front end code. After communicating with a business owner and understanding what their needs and technical requirements are, back-end developers use the aforementioned tools to create web applications with clean, well-documented code. They come up with the most effective and efficient solutions for engineering technology by converting and returning data into front end code a user can interact with, such as: filling out a form, creating a profile, shopping online, etc</h4>
+    </div>
+</div>
+
+
+
+<!-- Container (skills Section) -->
+<div id="skills" class="container-fluid text-left bg-grey">
+  <h2>SKILLS</h2>
+    <ul>
+      <li><h4>Development languages</h4></li>
+      <p>Server-side programming languages like Java, Python, Ruby, . Net etc. are use for sever-side-scripting. Server-side scripting is a technique used in web development which involves employing scripts on a web server which produce a response customised for each user's (client's) request to the website. Backend developer should know at least one server-side programming languages like Java, Python, Ruby, . Net etc.</p>
+      <li><h4>Database and cache</h4></li>
+      <p>Knowledge of various Database management technology is another important need of backend developer. MySQL, MongoDB, Oracle, SQLServer, Redis are widely used for the purpose of organizing and managing databases.Knowledge of caching mechanisms like varnish, Memcached, Redis is a plus.</p>
+      <li><h4>Server</h4></li>
+      <p>Exposure to handling Apache, Nginx, IIS servers, Microsoft IIS is desirable. A good background in Linux helps tremendously in administering servers.</p>
+      <li><h4> API (REST & SOAP)</h4></li>
+      <p>APIs are software programs that allow different applications on the web to interact and share information with each other. REST (Representational State Transfer) and SOAP (Simple Object Access Protocol) are two web technologies related to those APIs. Knowledge of creations and consumption of REST and SOAP services is desirable for back-end-developer.</p>
+    </ul>
+  </h4>
+</div>
+
+<!-- Container (salary Section) -->
+<div id="salary" class="container-fluid text-center">
+  <h2>SALARY</h2>
+  <h4>The average base salary of a back end developer in India – 7,92,000 per annum. The base average pay of a back end developer can up to a maximum of 1,733,000 per annum depending on different factors.</h4>
+  <h4>On the other hand, if you don’t have the right experience or are placed in a city that doesn’t pay its back end developer well enough, you could even make as low as 2,33,000 per annum. In addition to your skills and experience, there are other factors as well that play an important role in determining your salary.</h4>
+  <img src="back.png" >
+</div>
+
+<!-- Container (Pricing Section) -->
+<div id="companies" class="container-fluid">
+  <div class="text-center">
+    <h2>COMPANIES</h2>
+    <h4>Choose a city that your prefernce</h4>
+  </div>
+  <div class="row slideanim">
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Delhi</h1>
+        </div>
+        <div class="panel-body">
+          <a href="https://www.linkedin.com/jobs/view/backend-developer-at-antal-international-2306192508/?refId=40de96f9-7388-4cb4-9cea-533e2edb30aa&trk=public_jobs_topcard_title&originalSubdomain=in"><strong>Antal International </strong></a>
+          <br>
+          <a href="https://www.linkedin.com/jobs/view/2276399939/?alternateChannel=search&refId=v6x7xGlQ9KHdD2nArqb9aw%3D%3D&trackingId=qPAf4g%2FJ8b2qiCQk00gNIw%3D%3D"><strong>inVOID</strong></a>
+          <br>
+          <a href="https://www.linkedin.com/jobs/view/2218424457/?alternateChannel=search&refId=v6x7xGlQ9KHdD2nArqb9aw%3D%3D&trackingId=7qLAUbscAwLTF9OWSCgtew%3D%3D"><strong>NewsBytes </strong></a>
+          <br>
+          <a href="https://www.linkedin.com/jobs/view/2298816382/?alternateChannel=search&refId=bvwfIVhRm3KA2ehHvhp9lA%3D%3D&trackingId=%2FkXVgX%2BMjT9Veb9i6rMoKA%3D%3D"><strong>OneData Software Solutions</strong></a>
+          <br>
+          <a href="https://www.linkedin.com/jobs/view/2298852824/?alternateChannel=search&refId=bvwfIVhRm3KA2ehHvhp9lA%3D%3D&trackingId=NJ4ZsYwC%2BPsFH53%2B7ch9Gg%3D%3D"><strong>Teamie </strong></a>
+          <br>
+          <a href="https://www.linkedin.com/jobs/view/2264335204/?alternateChannel=search&refId=BExY8zKgylWIbEyz8SiCfA%3D%3D&trackingId=dUjCkmm5NvYxMHZ5unHl5w%3D%3D"><strong>Classplus</strong></a>
+        </div>
+      </div>      
+    </div>   
+
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Bengaluru</h1>
+        </div>
+        <div class="panel-body">
+          <a href="https://www.linkedin.com/jobs/view/2151054968/?alternateChannel=search&refId=oY4G%2Bn73l3%2FRubp7zRbj5A%3D%3D&trackingId=WTHOZFniPmGHJhk7%2FFXvnw%3D%3D"><strong>WattWorker </strong></a>
+          <br>
+          <a href="https://www.linkedin.com/jobs/view/2298578219/?alternateChannel=search&refId=oY4G%2Bn73l3%2FRubp7zRbj5A%3D%3D&trackingId=dNio6Kt2nsnXrQEMKAmdKg%3D%3D"><strong>Mantis HR Consulting</strong></a>
+          <br>
+          <a href="https://www.linkedin.com/jobs/view/2150626517/?alternateChannel=search&refId=oY4G%2Bn73l3%2FRubp7zRbj5A%3D%3D&trackingId=nnYfBD2K1VmIiAo4cObPqQ%3D%3D"><strong>PloPdo</strong></a>
+          <br>
+          <a href="https://www.linkedin.com/jobs/view/2245734918/?alternateChannel=search&refId=oY4G%2Bn73l3%2FRubp7zRbj5A%3D%3D&trackingId=Lrr68qrerUx%2BVmP5PAei%2BQ%3D%3D"><strong>Leap Finance</strong></a>
+          <br>
+         <a href="https://www.linkedin.com/jobs/view/2272651122/?alternateChannel=search&refId=oY4G%2Bn73l3%2FRubp7zRbj5A%3D%3D&trackingId=frOAwzKJcBd87qYwusqSAA%3D%3D"><strong>Marc Ellis</strong></a>
+         <br>
+          <a href="https://www.linkedin.com/jobs/view/2162389702/?alternateChannel=search&refId=X8GsqYQRTP0yM5WP%2BzQBjQ%3D%3D&trackingId=hs8cNzrHvGf%2BdItNA0XMVA%3D%3D"><strong>Mobile Premier League</strong></a>
+        </div>
+      </div>      
+    </div>       
+    
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Mumbai</h1>
+        </div>
+        <div class="panel-body">
+          <a href="https://www.linkedin.com/jobs/view/2231061867/?alternateChannel=search&refId=%2FFKlGFVSbfbUbMzqfWWD%2FA%3D%3D&trackingId=YRuyAbnIrSxMPbYEuMfEvw%3D%3D"><strong>RC Diamonds</strong></a>
+          <br>
+          <a href="https://www.indeed.co.in/cmp/Hdfc-Life-Ltd/salaries/back-end-developer/Mumbai-MH"><strong>Chalo</strong></a>
+          <br>
+          <a href="https://www.linkedin.com/jobs/view/2303209368/?alternateChannel=search&refId=%2FFKlGFVSbfbUbMzqfWWD%2FA%3D%3D&trackingId=kTAFeTglHN3Ucbk4hi6s2A%3D%3D"><strong>IARA HR Services </strong></a>
+          <br>
+          <a href="https://www.linkedin.com/jobs/view/2301809609/?alternateChannel=search&refId=KHeWzwMSFq%2BHDhzZDhNOzg%3D%3D&trackingId=qzuzgIAohjm1ZIVxYIWLPQ%3D%3D"><strong>Unifynd</strong></a>
+          <br>
+         <a href="https://www.linkedin.com/jobs/view/2306709293/?alternateChannel=search&refId=KHeWzwMSFq%2BHDhzZDhNOzg%3D%3D&trackingId=sulMqylwT7ODnPaCUPmTiA%3D%3D"><strong>Tamasha.live</strong></a>
+         <br>
+         <a href="https://www.linkedin.com/jobs/view/2252747552/?alternateChannel=search&refId=YchrCALhWla8%2BFJNEtQBlg%3D%3D&trackingId=P6wldYA%2FYvvHq439eeCW5g%3D%3D"><strong>CoutLoot</strong></a>
+        </div>
+      </div>      
+    </div> 
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+
+</body>
+</html>
